@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Home} from './pages/home';
+import {Curriculo} from './pages/curriculo'
 
 function App() {
 
   return (
-    <>
-    <div class="topnav">
-  <a class="active" href="#home">Início</a>
-  <a href="#news">Currículo</a>
-  <a href="#contact">Matérias</a>
-  <a href="#about">Sobre</a>
-</div>
-
-<p id='sobre'>vovovoodsofosdfjiisdj</p>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />        
+        <Route path="/curriculo" element={<Curriculo />} />
+      </Routes>
+    </Router>
   )
 }
 
